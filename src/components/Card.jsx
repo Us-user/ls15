@@ -12,7 +12,7 @@ export default function Card(props) {
     let deleteUser = props.deleteUser
     let openEdit = props.openEdit
     let setOpenEdit = props.setOpenEdit
-    let {us,setUs}=props
+    let {us,setUs,openEditModal}=props
 
     // const [nfte, setNfte] = useState('')
     // const [namee, setNamee] = useState('')
@@ -23,10 +23,6 @@ export default function Card(props) {
     // const [authorNamee, setAuthorNamee] = useState('')
     // const [us,setUs]=useState(null)
 
-    function openEditModal(el) {
-        setOpenEdit(true)
-        setUs(el)
-    }
 
     return (
         <Box sx={{

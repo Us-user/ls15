@@ -59,7 +59,14 @@ export default function SectionMain() {
     ])
     const [open, setOpen] = useState(false)
     const [openEdit, setOpenEdit] = useState(false)
-    const [us, setUs] = useState(null)
+
+    const [nfte, setNfte] = useState('')
+    const [namee, setNamee] = useState('')
+    const [priceEthe, setPriceEthe] = useState('')
+    const [priceUsde, setPriceUsde] = useState('')
+    const [likee, setLikee] = useState('')
+    const [statuse, setStatuse] = useState(true)
+    const [authorNamee, setAuthorNamee] = useState('')
 
 
     function deleteUser(id) {
@@ -67,6 +74,13 @@ export default function SectionMain() {
     }
     function addUser(user) {
         setList([...list, user])
+    }
+    function openEditModal(el) {
+        setOpenEdit(true)
+        setNfte(el.image)
+        setNamee(el.title)
+        setPriceEthe(el.priceEth)
+        setPriceUsde(el.priceUsd)
     }
     return (
         <section className='w-4/5 m-auto'>
@@ -85,13 +99,13 @@ export default function SectionMain() {
                 {list.map((el) => {
 
                     return (
-                        <Card key={el.id} el={el} ava={user} deleteUser={deleteUser} openEdit={openEdit} setOpenEdit={setOpenEdit} us={us} setUs={setUs} />
+                        <Card key={el.id} el={el} openEditModal={openEditModal} ava={user} deleteUser={deleteUser} openEdit={openEdit} setOpenEdit={setOpenEdit} />
                     )
                 })}
             </Stack>
 
             <AddModal open={open} setOpen={setOpen} addUser={addUser} />
-            <EditModal openEdit={openEdit} setOpenEdit={setOpenEdit} us={us} setUs={setUs}/>
+            <EditModal openEdit={openEdit} setOpenEdit={setOpenEdit} nfte={nfte} setNfte={setNfte} namee={namee} setNamee={setNamee} priceEthe={priceEthe} setPriceEthe={setPriceEthe} priceUsde={priceUsde} setPriceUsde={setPriceUsde} likee={likee} setLikee={setLikee} statuse={statuse} setStatuse={setStatuse} authorNamee={authorNamee} setAuthorNamee={setAuthorNamee} />
         </section>
     )
 }

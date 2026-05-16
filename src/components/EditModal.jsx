@@ -1,14 +1,7 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import React, { useState } from 'react'
 
-export default function EditModal({ openEdit, setOpenEdit }) {
-    const [nfte, setNfte] = useState('')
-    const [namee, setNamee] = useState('')
-    const [priceEthe, setPriceEthe] = useState('')
-    const [priceUsde, setPriceUsde] = useState('')
-    const [likee, setLikee] = useState('')
-    const [statuse, setStatuse] = useState(true)
-    const [authorNamee, setAuthorNamee] = useState('')
+export default function EditModal({likee,setLikee,setAuthorNamee,authorNamee,setStatuse,statuse, openEdit,setPriceUsde,priceUsde,setPriceEthe, setOpenEdit, nfte,setNfte,namee,setNamee,priceEthe}) {
 
 
     return (
@@ -35,8 +28,8 @@ export default function EditModal({ openEdit, setOpenEdit }) {
                         <Select
                             labelId="demo-simple-select-standard-label"
                             id="demo-simple-select-standard"
-                            value={status}
-                            onChange={(e) => setStatus(e.target.value)}>
+                            value={statuse}
+                            onChange={(e) => setStatuse(e.target.value)}>
                             <MenuItem value={'true'}>Have</MenuItem>
                             <MenuItem value={'false'}>None</MenuItem>
                         </Select>
