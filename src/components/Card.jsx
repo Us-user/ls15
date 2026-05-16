@@ -14,15 +14,6 @@ export default function Card(props) {
     let setOpenEdit = props.setOpenEdit
     let {us,setUs,openEditModal}=props
 
-    // const [nfte, setNfte] = useState('')
-    // const [namee, setNamee] = useState('')
-    // const [priceEthe, setPriceEthe] = useState('')
-    // const [priceUsde, setPriceUsde] = useState('')
-    // const [likee, setLikee] = useState('')
-    // const [statuse, setStatuse] = useState(true)
-    // const [authorNamee, setAuthorNamee] = useState('')
-    // const [us,setUs]=useState(null)
-
 
     return (
         <Box sx={{

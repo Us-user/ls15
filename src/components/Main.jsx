@@ -4,6 +4,7 @@ import Section2 from './Section2'
 import Section3 from './Section3'
 import NftCarousel from './NftCarousel'
 import SectionMain from './SectionMain'
+import SectionLast from './SectionLast'
 
 export default function Main() {
   return (
@@ -13,6 +14,7 @@ export default function Main() {
       <Section3/>
       <NftCarousel/>
       <SectionMain/>
+      <SectionLast/>
     </main>
   )
 }
