@@ -81,6 +81,8 @@ export default function SectionMain() {
         setNamee(el.title)
         setPriceEthe(el.priceEth)
         setPriceUsde(el.priceUsd)
+        setLikee(el.likes)
+        setStatuse(el.status)
     }
     return (
         <section className='w-4/5 m-auto'>
