@@ -1,0 +1,97 @@
+import { Button, Stack, Typography } from '@mui/material'
+import React, { useState } from 'react'
+import get1 from '../assets/get1.svg'
+import get2 from '../assets/get2.svg'
+import get3 from '../assets/get3.svg'
+import get4 from '../assets/get4.svg'
+
+import user from '../assets/user.svg'
+import Card from './Card'
+import AddModal from './AddModal'
+import EditModal from './EditModal'
+
+export default function SectionMain() {
+    const [list, setList] = useState([
+        {
+            id: 1,
+            title: 'Monkey Ape',
+            authorName: '@JSmith',
+            user: user,
+            image: get1,
+            likes: 341,
+            priceEth: 4.89,
+            priceUsd: '654,874.86',
+            status: true,
+        },
+        {
+            id: 2,
+            title: 'Moonfall',
+            authorName: '@JSmith',
+            user: user,
+            image: get2,
+            likes: 123,
+            priceEth: 4.89,
+            priceUsd: '654,874.86',
+            status: false,
+        },
+        {
+            id: 3,
+            title: 'Wired Human',
+            authorName: '@JSmith',
+            user: user,
+            image: get3,
+            likes: 341,
+            priceEth: 4.89,
+            priceUsd: '654,874.86',
+            status: true,
+        },
+        {
+            id: 4,
+            title: 'Racer-To-Go',
+            authorName: '@JSmith',
+            user: user,
+            image: get4,
+            likes: 341,
+            priceEth: 4.89,
+            priceUsd: '654,874.86',
+            status: true,
+        },
+    ])
+    const [open, setOpen] = useState(false)
+    const [openEdit, setOpenEdit] = useState(false)
+    const [us, setUs] = useState(null)
+
+
+    function deleteUser(id) {
+        setList(list.filter(el => el.id != id))
+    }
+    function addUser(user) {
+        setList([...list, user])
+    }
+    return (
+        <section className='w-4/5 m-auto'>
+            <Typography>Most Loved NFTs of the Time</Typography>
+            <Stack className='justify-between items-center' direction={{ lg: 'row' }}>
+                <Typography variant='h1'>Hot Trending NFTs </Typography>
+                <Button onClick={() => setOpen(true)} sx={{
+                    color: '#AD1AAF',
+                    border: '1px solid #AD1AAF',
+                    p: 2
+                }}>Add Card</Button>
+            </Stack>
+            <Stack direction="row" spacing={2} sx={{
+                flexWrap: 'wrap'
+            }}>
+                {list.map((el) => {
+
+                    return (
+                        <Card key={el.id} el={el} ava={user} deleteUser={deleteUser} openEdit={openEdit} setOpenEdit={setOpenEdit} us={us} setUs={setUs} />
+                    )
+                })}
+            </Stack>
+
+            <AddModal open={open} setOpen={setOpen} addUser={addUser} />
+            <EditModal openEdit={openEdit} setOpenEdit={setOpenEdit} us={us} setUs={setUs}/>
+        </section>
+    )
+}
