@@ -1,7 +1,7 @@
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material'
 import React, { useState } from 'react'
 
-export default function EditModal({likee,setLikee,setAuthorNamee,authorNamee,setStatuse,statuse, openEdit,setPriceUsde,priceUsde,setPriceEthe, setOpenEdit, nfte,setNfte,namee,setNamee,priceEthe}) {
+export default function EditModal({editUser,likee,setLikee,setAuthorNamee,authorNamee,setStatuse,statuse, openEdit,setPriceUsde,priceUsde,setPriceEthe, setOpenEdit, nfte,setNfte,namee,setNamee,priceEthe}) {
 
 
     return (
@@ -39,7 +39,7 @@ export default function EditModal({likee,setLikee,setAuthorNamee,authorNamee,set
                     <Button onClick={()=>setOpenEdit(false)} autoFocus>
                         Disagree
                     </Button>
-                    <Button onClick={''}>Agree</Button>
+                    <Button onClick={()=>editUser()}>Agree</Button>
                 </DialogActions>
             </Dialog>
         </div>

@@ -67,6 +67,7 @@ export default function SectionMain() {
     const [likee, setLikee] = useState('')
     const [statuse, setStatuse] = useState(true)
     const [authorNamee, setAuthorNamee] = useState('')
+    const [idx,setIdx]=useState(null)
 
 
     function deleteUser(id) {
@@ -83,6 +84,23 @@ export default function SectionMain() {
         setPriceUsde(el.priceUsd)
         setLikee(el.likes)
         setStatuse(el.status)
+        setIdx(el.id)
+        setAuthorNamee(el.authorName)
+    }
+    function editUser(){
+        let upUser={
+            id:idx,
+            title:namee,
+            authorName:authorNamee,
+            user:user,
+            image:nfte,
+            likes:likee,
+            status:statuse,
+            priceEth:priceEthe,
+            priceUsd:priceUsde
+        }
+        setList(list.map((el)=>el.id==idx ? upUser:el))
+        setOpenEdit(false)
     }
     return (
         <section className='w-4/5 m-auto'>
@@ -107,7 +125,7 @@ export default function SectionMain() {
             </Stack>
 
             <AddModal open={open} setOpen={setOpen} addUser={addUser} />
-            <EditModal openEdit={openEdit} setOpenEdit={setOpenEdit} nfte={nfte} setNfte={setNfte} namee={namee} setNamee={setNamee} priceEthe={priceEthe} setPriceEthe={setPriceEthe} priceUsde={priceUsde} setPriceUsde={setPriceUsde} likee={likee} setLikee={setLikee} statuse={statuse} setStatuse={setStatuse} authorNamee={authorNamee} setAuthorNamee={setAuthorNamee} />
+            <EditModal openEdit={openEdit} editUser={editUser} setOpenEdit={setOpenEdit} nfte={nfte} setNfte={setNfte} namee={namee} setNamee={setNamee} priceEthe={priceEthe} setPriceEthe={setPriceEthe} priceUsde={priceUsde} setPriceUsde={setPriceUsde} likee={likee} setLikee={setLikee} statuse={statuse} setStatuse={setStatuse} authorNamee={authorNamee} setAuthorNamee={setAuthorNamee} />
         </section>
     )
 }
